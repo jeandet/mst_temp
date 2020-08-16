@@ -1,0 +1,7 @@
+build/
+*.ipynb_check*
+*.pyc
+*.swp
+*.txt.user.*
+*.txt.user
+.idea
