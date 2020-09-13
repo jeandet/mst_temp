@@ -46,4 +46,4 @@ class Gcc(Compiler):
                        ["ar", "as", "ld", "strip", "objcopy", "objdump", "size", "gcov", "gdb"]}
 
 
-available_compilers = {"GCC": Gcc}
+available_compilers = {"gcc": Gcc}

@@ -8,14 +8,10 @@ __email__ = "alexis.jeandet@member.fsf.org"
 __status__ = "Development"
 
 import importlib, os
-from ..targets.stm32 import *
 
 
-def _scan_for_targets():
+def scan_for_targets():
     target_dir = os.path.dirname(os.path.realpath(__file__)) + "/../targets"
     modules_files = [f for f in os.listdir(target_dir) if f[-3:] == '.py' and f != '__init__.py']
     for m_file in modules_files:
-        mod = importlib.import_module( "targets.targets." + m_file[:-3], "")
-
-
-_scan_for_targets()
+        mod = importlib.import_module( "meson_cross_gen.targets.targets." + m_file[:-3], "")

@@ -24,6 +24,10 @@ class Target:
     cpp_link_args = []
     compiler_prefix = ""
 
+    constants = {}
+    options = {}
+    properties = {}
+
     def __repr__(self):
         return """
 name:           {name}

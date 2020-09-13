@@ -9,18 +9,20 @@ __maintainer__ = "Alexis Jeandet"
 __email__ = "alexis.jeandet@member.fsf.org"
 __status__ = "Development"
 
-import sys
+
 import argparse
-from targets import available_targets, target_loader
-from compilers import available_compilers
-from cross_file import generate_cross_file
+from meson_cross_gen.targets import target_loader, available_targets
+from meson_cross_gen.compilers import available_compilers
+from meson_cross_gen.cross_file import generate_cross_file
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-l", "--list-targets", help="List supported targets", action="store_true")
-parser.add_argument("-t", "--target", help="Set target", default='stm32f429i')
+parser.add_argument("-t", "--target", help="Set target", default='stm32f4')
 parser.add_argument("-c", "--compiler", help="Set compiler", default='gcc')
 args = parser.parse_args()
+
+target_loader.scan_for_targets()
 
 if __name__ == '__main__':
     if args.list_targets:

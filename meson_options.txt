@@ -1,0 +1,1 @@
+option('cpu_dir', type : 'string', value : 'Host', description : 'Subdirectory to use for specific CPU support, should be set by cross file.')
