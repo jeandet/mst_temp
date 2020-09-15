@@ -40,6 +40,7 @@ ENTRY(__mst__reset_handler)
 SECTIONS
 {
     .isr_vector : {
+        KEEP(*(.initial_sp_value))
         KEEP(*(.common_interrupt_vector_table))	/* Vector table */
         KEEP(*(.specific_interrupt_vector_table))
     } >rom
